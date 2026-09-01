@@ -3,12 +3,12 @@ backend:
   repo: ipp-editorial/my-news-website
   branch: main
 
-media_folder: "public/images/gallery"
+media_folder: "src/public/images/gallery"
 public_folder: "/images/gallery"
 
 collections:
-  - name: "news_fa"
-    label: "اخبار فارسی"
+  - name: "news"
+    label: "اخبار"
     folder: "src/news"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{fields.custom_slug}}"
@@ -19,9 +19,9 @@ collections:
         name: "tags"
         widget: "select"
         multiple: true
-        options: ["اخبار", "بیانیه‌ها", "کمپین‌ها", "زندانیان سیاسی", "شهادت‌ها"]
+        options: ["اخبار", "بیانیه‌ها", "زندانیان سیاسی", "شهادت‌ها"]
         required: false
-      - { label: "اسلاگ سفارشی", name: "custom_slug", widget: "string", required: false }
-      - { label: "تصویر شاخص", name: "image", widget: "image", required: false }
+      - { label: "اسلاگ", name: "custom_slug", widget: "string", required: false }
+      - { label: "تصویر", name: "image", widget: "image", required: false }
       - { label: "Layout", name: "layout", widget: "hidden", default: "post.njk" }
       - { label: "متن اصلی", name: "body", widget: "markdown" }
