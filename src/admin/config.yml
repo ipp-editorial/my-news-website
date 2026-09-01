@@ -2,6 +2,7 @@ backend:
   name: github
   repo: ipp-editorial/my-news-website
   branch: main
+  auth_type: token
 
 media_folder: "src/public/images/gallery"
 public_folder: "/images/gallery"
