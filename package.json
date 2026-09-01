@@ -1,0 +1,12 @@
+{
+  "name": "my-news-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "eleventy"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "markdown-it": "^13.0.2"
+  }
+}
