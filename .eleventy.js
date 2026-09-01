@@ -11,6 +11,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("readableDate", d =>
     new Date(d).toLocaleDateString("fa-IR", { year: "numeric", month: "long", day: "numeric" })
   );
+eleventyConfig.addCollection("posts", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/news/*.md");
+});
 
  return {
     dir: {
