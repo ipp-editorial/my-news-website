@@ -13,7 +13,9 @@ title: صفحه اصلی
   {% for post in collections.all %}
     {% if "src/news" in post.inputPath %}
       <li style="margin-bottom: 15px;">
-        <a href="{{ post.url }}" style="font-size: 1.2rem; color: #0066cc;">{{ post.data.title }}</a>
+        <a href="{{ ('/news/' ~ post.fileSlug ~ '/') | url }}" style="font-size: 1.2rem; color: #0066cc;">
+          {{ post.data.title or post.fileSlug }}
+        </a>
       </li>
     {% endif %}
   {% else %}
