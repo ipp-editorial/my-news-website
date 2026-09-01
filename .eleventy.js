@@ -4,10 +4,11 @@ module.exports = function(eleventyConfig) {
   let markdownLibrary = markdownIt({ html: true, breaks: true, linkify: true });
   eleventyConfig.setLibrary("md", markdownLibrary);
 
+  // کپی کامل پوشه admin و تصاویر به خروجی نهایی
+  eleventyConfig.addPassthroughCopy("src/admin");
   eleventyConfig.addPassthroughCopy({ "public/images": "images" });
-  eleventyConfig.addPassthroughCopy("src/admin/config.yml");
 
-  eleventyConfig.addFilter("readableDate", d => 
+  eleventyConfig.addFilter("readableDate", d =>
     new Date(d).toLocaleDateString("fa-IR", { year: "numeric", month: "long", day: "numeric" })
   );
 
