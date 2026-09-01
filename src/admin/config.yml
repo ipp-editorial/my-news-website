@@ -15,6 +15,7 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{fields.custom_slug}}"
     fields:
+    - { name: "tags", widget: "hidden", default: "news" }
       - { label: "عنوان", name: "title", widget: "string" }
       - { label: "تاریخ", name: "date", widget: "datetime" }
       - label: "برچسب‌ها"
