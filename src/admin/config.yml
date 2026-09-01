@@ -28,3 +28,4 @@ collections:
       - { label: "تصویر", name: "image", widget: "image", required: false }
       - { label: "Layout", name: "layout", widget: "hidden", default: "post.njk" }
       - { label: "متن اصلی", name: "body", widget: "markdown" }
+
