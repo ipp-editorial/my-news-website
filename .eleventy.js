@@ -12,10 +12,11 @@ module.exports = function(eleventyConfig) {
     new Date(d).toLocaleDateString("fa-IR", { year: "numeric", month: "long", day: "numeric" })
   );
 
-  return {
+ return {
     dir: {
       input: "src",
       output: "_site"
-    }
+    },
+    pathPrefix: "/my-news-website/"
   };
 };
