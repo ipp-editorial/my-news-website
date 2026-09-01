@@ -1,25 +1,27 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }}</title>
-  <style>
-    body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; line-height: 1.8; }
-    h1 { color: #333; }
-    .date { color: #666; font-size: 0.9em; }
-  </style>
-</head>
-<body>
-  <article>
-    <h1>{{ title }}</h1>
-    {% if date %}
-      <p class="date">تاریخ: {{ date | readableDate }}</p>
-    {% endif %}
-    <hr>
-    <div>
-      {{ content | safe }}
-    </div>
-  </article>
-</body>
-</html>
+---
+layout: base.njk
+---
+
+<article style="max-width: 800px; margin: 40px auto; padding: 0 20px; font-family: sans-serif; direction: rtl; line-height: 1.8;">
+  <h1 style="font-size: 2rem; color: #111; margin-bottom: 10px;">{{ title }}</h1>
+  
+  {% if date %}
+    <time style="color: #666; font-size: 0.9rem; display: block; margin-bottom: 20px;">
+      {{ date | readableDate }}
+    </time>
+  {% endif %}
+
+  <hr style="border: none; border-top: 1px solid #eee; margin-bottom: 25px;">
+
+  {% if image %}
+    <img src="{{ image | url }}" alt="{{ title }}" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px; margin-bottom: 20px;">
+  {% endif %}
+
+  <div style="font-size: 1.1rem; color: #333;">
+    {{ content | safe }}
+  </div>
+
+  <div style="margin-top: 40px;">
+    <a href="{{ '/' | url }}" style="color: #0066cc; text-decoration: none;">← بازگشت به صفحه اصلی</a>
+  </div>
+</article>
