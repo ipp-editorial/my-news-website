@@ -1,0 +1,27 @@
+backend:
+  name: github
+  repo: ipp-editorial/my-news-website
+  branch: main
+
+media_folder: "public/images/gallery"
+public_folder: "/images/gallery"
+
+collections:
+  - name: "news_fa"
+    label: "اخبار فارسی"
+    folder: "src/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{fields.custom_slug}}"
+    fields:
+      - { label: "عنوان", name: "title", widget: "string" }
+      - { label: "تاریخ", name: "date", widget: "datetime" }
+      - label: "برچسب‌ها"
+        name: "tags"
+        widget: "select"
+        multiple: true
+        options: ["اخبار", "بیانیه‌ها", "کمپین‌ها", "زندانیان سیاسی", "شهادت‌ها"]
+        required: false
+      - { label: "اسلاگ سفارشی", name: "custom_slug", widget: "string", required: false }
+      - { label: "تصویر شاخص", name: "image", widget: "image", required: false }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post.njk" }
+      - { label: "متن اصلی", name: "body", widget: "markdown" }
