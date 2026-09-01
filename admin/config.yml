@@ -3,7 +3,6 @@ backend:
   repo: ipp-editorial/my-news-website
   branch: main
 
-# فعال‌سازی کادر ورود مستقیم بدون نیاز به سرور Netlify
 local_backend: true
 
 media_folder: "src/public/images/gallery"
@@ -26,6 +25,4 @@ collections:
         required: false
       - { label: "اسلاگ", name: "custom_slug", widget: "string", required: false }
       - { label: "تصویر", name: "image", widget: "image", required: false }
-      - { label: "Layout", name: "layout", widget: "hidden", default: "post.njk" }
       - { label: "متن اصلی", name: "body", widget: "markdown" }
-
