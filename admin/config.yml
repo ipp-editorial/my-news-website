@@ -15,12 +15,12 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{fields.custom_slug}}"
     fields:
-    - { name: "layout", widget: "hidden", default: "post.njk" }
-    - { name: "tags", widget: "hidden", default: "news" }
+      - { name: "layout", widget: "hidden", default: "post.njk" }
+      - { name: "tags", widget: "hidden", default: "news" }
       - { label: "عنوان", name: "title", widget: "string" }
       - { label: "تاریخ", name: "date", widget: "datetime" }
       - label: "برچسب‌ها"
-        name: "tags"
+        name: "categories"
         widget: "select"
         multiple: true
         options: ["اخبار", "بیانیه‌ها", "زندانیان سیاسی", "شهادت‌ها"]
