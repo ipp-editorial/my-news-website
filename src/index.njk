@@ -1,23 +1,24 @@
 ---
-layout: base.njk
 title: صفحه اصلی
 ---
-
-<main style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: sans-serif; direction: rtl;">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>وب‌سایت خبری</title>
+</head>
+<body style="font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px;">
   <h1>آخرین اخبار</h1>
-
-  <ul style="list-style: none; padding: 0;">
-  {% for post in collections.news %}
-    <li style="border-bottom: 1px solid #eee; padding: 12px 0;">
-      <h2 style="margin: 0 0 8px 0; font-size: 1.2rem;">
-        <a href="{{ post.url }}" style="color: #0066cc; text-decoration: none;">{{ post.data.title }}</a>
-      </h2>
-      {% if post.data.date %}
-        <time style="color: #666; font-size: 0.85rem;">{{ post.data.date | date('YYYY-MM-DD') }}</time>
-      {% endif %}
-    </li>
+  <ul>
+  {% for post in collections.all %}
+    {% if "src/news" in post.inputPath %}
+      <li style="margin-bottom: 15px;">
+        <a href="{{ post.url }}" style="font-size: 1.2rem; color: #0066cc;">{{ post.data.title }}</a>
+      </li>
+    {% endif %}
   {% else %}
     <li>هیچ خبری یافت نشد.</li>
   {% endfor %}
   </ul>
-</main>
+</body>
+</html>
