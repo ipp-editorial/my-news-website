@@ -1,9 +1,7 @@
 layout: post.njk
 tags: news
-title: تایید حکم اعدام علامه‌عبدی پیامبری در دیوان عالی کشور
-date: 2026-09-01
-categories: اخبار
-custom_slug: supreme-court-verdict
-image: images/gallery/peighambari.png
-
-متن کامل خبر در این قسمت قرار می‌گیرد.
+title: حکم دادگاه عالی در مورد پرونده ای خاص
+date: 2024-02-05
+categories: قضایی
+custom_list: supreme-court-verdict
+image: images/gallery/pighdahvard.png
